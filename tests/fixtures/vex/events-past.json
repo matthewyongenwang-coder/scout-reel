@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "current_page": 1,
+    "first_page_url": "https://events.vex.com/api/v2/events?page=1",
+    "from": 1,
+    "last_page": 2,
+    "last_page_url": "https://events.vex.com/api/v2/events?page=2",
+    "next_page_url": "https://events.vex.com/api/v2/events?page=2",
+    "path": "https://events.vex.com/api/v2/events",
+    "per_page": 50,
+    "prev_page_url": null,
+    "to": 50,
+    "total": 75,
+    "note": "trimmed to 5"
+  },
+  "data": [
+    {
+      "id": 64342,
+      "sku": "RE-V5RC-26-4342",
+      "name": "VIC | VEX V5 Robotics Competition™ (Blended): Override™ Tournament @ St Andrew's Christian College",
+      "start": "2026-08-27T00:00:00-04:00",
+      "end": "2026-08-27T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "St Andrews Christian College",
+        "address_1": "130 Tyner Road",
+        "address_2": null,
+        "city": "Wantirna South",
+        "region": "Victoria",
+        "postcode": "3152",
+        "country": "Australia",
+        "coordinates": {
+          "lat": -37.874309,
+          "lon": 145.244739
+        }
+      },
+      "locations": {
+        "2026-08-27": {
+          "venue": "St Andrews Christian College",
+          "address_1": "130 Tyner Road",
+          "address_2": null,
+          "city": "Wantirna South",
+          "region": "Victoria",
+          "postcode": "3152",
+          "country": "Australia",
+          "coordinates": {
+            "lat": -37.874309,
+            "lon": 145.244739
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default Division",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": true,
+      "event_type": null
+    },
+    {
+      "id": 65206,
+      "sku": "RE-V5RC-26-5206",
+      "name": "SA | VEX V5 Robotics Competition™ (HS): Override™ Tournament @ Pedare",
+      "start": "2026-08-26T00:00:00-04:00",
+      "end": "2026-08-26T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "Pedare Christian College",
+        "address_1": "12-30 Surrey Farm Drive",
+        "address_2": null,
+        "city": "Golden Grove",
+        "region": "South Australia",
+        "postcode": "5125",
+        "country": "Australia",
+        "coordinates": {
+          "lat": -34.794459,
+          "lon": 138.692326
+        }
+      },
+      "locations": {
+        "2026-08-26": {
+          "venue": "Pedare Christian College",
+          "address_1": "12-30 Surrey Farm Drive",
+          "address_2": null,
+          "city": "Golden Grove",
+          "region": "South Australia",
+          "postcode": "5125",
+          "country": "Australia",
+          "coordinates": {
+            "lat": -34.794459,
+            "lon": 138.692326
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "HS",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": true,
+      "event_type": null
+    },
+    {
+      "id": 64366,
+      "sku": "RE-V5RC-26-4366",
+      "name": "2026长三角VEX机器人精英赛: HS，Override",
+      "start": "2026-08-24T00:00:00-04:00",
+      "end": "2026-08-27T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "上海临港凯悦酒店",
+        "address_1": "",
+        "address_2": null,
+        "city": "上海",
+        "region": "Shanghai",
+        "postcode": "",
+        "country": "China",
+        "coordinates": {
+          "lat": 31.230416,
+          "lon": 121.473701
+        }
+      },
+      "locations": {
+        "2026-08-24": {
+          "venue": "上海临港凯悦酒店",
+          "address_1": "",
+          "address_2": null,
+          "city": "上海",
+          "region": "Shanghai",
+          "postcode": "",
+          "country": "China",
+          "coordinates": {
+            "lat": 31.230416,
+            "lon": 121.473701
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Division A",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    },
+    {
+      "id": 64367,
+      "sku": "RE-V5RC-26-4367",
+      "name": "2026长三角VEX机器人精英赛: MS，Override",
+      "start": "2026-08-24T00:00:00-04:00",
+      "end": "2026-08-27T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "上海临港凯悦酒店",
+        "address_1": "",
+        "address_2": null,
+        "city": "上海",
+        "region": "Shanghai",
+        "postcode": "",
+        "country": "China",
+        "coordinates": {
+          "lat": 31.230416,
+          "lon": 121.473701
+        }
+      },
+      "locations": {
+        "2026-08-24": {
+          "venue": "上海临港凯悦酒店",
+          "address_1": "",
+          "address_2": null,
+          "city": "上海",
+          "region": "Shanghai",
+          "postcode": "",
+          "country": "China",
+          "coordinates": {
+            "lat": 31.230416,
+            "lon": 121.473701
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Division A",
+          "order": 1
+        },
+        {
+          "id": 2,
+          "name": "Division B",
+          "order": 2
+        },
+        {
+          "id": 100,
+          "name": "FINAL",
+          "order": 100
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    },
+    {
+      "id": 64664,
+      "sku": "RE-V5RC-26-4664",
+      "name": "NSW | VEX V5 Robotics Competition™ (Blended): Override™ Tournament @ Shore",
+      "start": "2026-08-23T00:00:00-04:00",
+      "end": "2026-08-23T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "Shore",
+        "address_1": "Blue St",
+        "address_2": null,
+        "city": "North Sydey",
+        "region": "New South Wales",
+        "postcode": "2060",
+        "country": "Australia",
+        "coordinates": {
+          "lat": -33.840949,
+          "lon": 151.207445
+        }
+      },
+      "locations": {
+        "2026-08-23": {
+          "venue": "Shore",
+          "address_1": "Blue St",
+          "address_2": null,
+          "city": "North Sydey",
+          "region": "New South Wales",
+          "postcode": "2060",
+          "country": "Australia",
+          "coordinates": {
+            "lat": -33.840949,
+            "lon": 151.207445
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Division 1",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": true,
+      "event_type": null
+    }
+  ]
+}

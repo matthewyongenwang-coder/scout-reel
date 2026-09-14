@@ -1,0 +1,297 @@
+{
+  "meta": {
+    "current_page": 1,
+    "first_page_url": "https://events.vex.com/api/v2/events?page=1",
+    "from": 1,
+    "last_page": 123,
+    "last_page_url": "https://events.vex.com/api/v2/events?page=123",
+    "next_page_url": "https://events.vex.com/api/v2/events?page=2",
+    "path": "https://events.vex.com/api/v2/events",
+    "per_page": 5,
+    "prev_page_url": null,
+    "to": 5,
+    "total": 611
+  },
+  "data": [
+    {
+      "id": 65311,
+      "sku": "RE-V5RC-26-5311",
+      "name": "NE Vic and Sth'ern Riverina - Wangaratta Comp: Galen Catholic College",
+      "start": "2026-09-17T00:00:00-04:00",
+      "end": "2026-09-17T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "Galen Catholic College",
+        "address_1": "College Street",
+        "address_2": null,
+        "city": "Wangaratta",
+        "region": null,
+        "postcode": "3677",
+        "country": "Australia",
+        "coordinates": {
+          "lat": -36.338441,
+          "lon": 146.31094
+        }
+      },
+      "locations": {
+        "2026-09-17": {
+          "venue": "Galen Catholic College",
+          "address_1": "College Street",
+          "address_2": null,
+          "city": "Wangaratta",
+          "region": null,
+          "postcode": "3677",
+          "country": "Australia",
+          "coordinates": {
+            "lat": -36.338441,
+            "lon": 146.31094
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    },
+    {
+      "id": 64359,
+      "sku": "RE-V5RC-26-4359",
+      "name": "Speedway: Override VEX V5 Blended Signature Event: VEX V5 Robotics Competition, Presented by the Chrysalis Global Foundation",
+      "start": "2026-09-18T00:00:00-04:00",
+      "end": "2026-09-20T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "Indianapolis Motor Speedway",
+        "address_1": "4790 W. 16th St.",
+        "address_2": null,
+        "city": "Indianapolis",
+        "region": "Indiana",
+        "postcode": "46222",
+        "country": "United States",
+        "coordinates": {
+          "lat": 39.787406,
+          "lon": -86.238405
+        }
+      },
+      "locations": {
+        "2026-09-18": {
+          "venue": "Indianapolis Motor Speedway",
+          "address_1": "4790 W. 16th St.",
+          "address_2": null,
+          "city": "Indianapolis",
+          "region": "Indiana",
+          "postcode": "46222",
+          "country": "United States",
+          "coordinates": {
+            "lat": 39.787406,
+            "lon": -86.238405
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default",
+          "order": 1
+        }
+      ],
+      "level": "Signature",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    },
+    {
+      "id": 64615,
+      "sku": "RE-V5RC-26-4615",
+      "name": "New Plymouth VEX V5 Robotics Competition™ Tournament 5: Override™  @  New Plymouth Boys' High School (Kiwibots Event in Central Robotics Region)",
+      "start": "2026-09-19T00:00:00-04:00",
+      "end": "2026-09-19T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "New Plymouth Boys' High School",
+        "address_1": "107 Coronation Avenue",
+        "address_2": null,
+        "city": "New Plymouth",
+        "region": null,
+        "postcode": "4310",
+        "country": "New Zealand",
+        "coordinates": {
+          "lat": -39.061256,
+          "lon": 174.086124
+        }
+      },
+      "locations": {
+        "2026-09-19": {
+          "venue": "New Plymouth Boys' High School",
+          "address_1": "107 Coronation Avenue",
+          "address_2": null,
+          "city": "New Plymouth",
+          "region": null,
+          "postcode": "4310",
+          "country": "New Zealand",
+          "coordinates": {
+            "lat": -39.061256,
+            "lon": 174.086124
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    },
+    {
+      "id": 65345,
+      "sku": "RE-V5RC-26-5345",
+      "name": "爱因斯坦联盟2026-2027 VEX机器人西安城市赛（二）: VEX V5 Robotics Competition",
+      "start": "2026-09-19T00:00:00-04:00",
+      "end": "2026-09-20T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "泾河新城体育中心",
+        "address_1": "咸阳市泾阳县正阳大道1165号",
+        "address_2": null,
+        "city": "Xi'an",
+        "region": "Shaanxi",
+        "postcode": "710000",
+        "country": "China",
+        "coordinates": {
+          "lat": 34.4866,
+          "lon": 108.95103
+        }
+      },
+      "locations": {
+        "2026-09-19": {
+          "venue": "泾河新城体育中心",
+          "address_1": "咸阳市泾阳县正阳大道1165号",
+          "address_2": null,
+          "city": "Xi'an",
+          "region": "Shaanxi",
+          "postcode": "710000",
+          "country": "China",
+          "coordinates": {
+            "lat": 34.4866,
+            "lon": 108.95103
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    },
+    {
+      "id": 65444,
+      "sku": "RE-V5RC-26-5444",
+      "name": "Auckland | VEX V5 Robotics Competition™ (Blended): Override™ Tournament #6 @ Onehunga High School",
+      "start": "2026-09-19T00:00:00-04:00",
+      "end": "2026-09-19T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "Onehunga High School",
+        "address_1": "24 Pleasant Street, Onehunga",
+        "address_2": null,
+        "city": "Tāmaki Makaurau",
+        "region": "Auckland",
+        "postcode": "10561",
+        "country": "New Zealand",
+        "coordinates": {
+          "lat": -36.919422,
+          "lon": 174.770566
+        }
+      },
+      "locations": {
+        "2026-09-19": {
+          "venue": "Onehunga High School",
+          "address_1": "24 Pleasant Street, Onehunga",
+          "address_2": null,
+          "city": "Tāmaki Makaurau",
+          "region": "Auckland",
+          "postcode": "10561",
+          "country": "New Zealand",
+          "coordinates": {
+            "lat": -36.919422,
+            "lon": 174.770566
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    }
+  ]
+}

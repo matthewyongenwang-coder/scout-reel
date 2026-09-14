@@ -14,9 +14,17 @@ describe("parseServerEnv", () => {
   });
 
   it("names every missing variable without printing values", () => {
-    expect(() => parseServerEnv({ ...valid, VEX_API_KEY: undefined, YOUTUBE_API_KEY: "" })).toThrow(
-      /VEX_API_KEY, YOUTUBE_API_KEY/,
-    );
+    expect(() =>
+      parseServerEnv({ ...valid, VEX_API_KEY: undefined, NEXT_PUBLIC_SUPABASE_ANON_KEY: "" }),
+    ).toThrow(/VEX_API_KEY, NEXT_PUBLIC_SUPABASE_ANON_KEY/);
+  });
+
+  it("treats .env.example placeholders as missing", () => {
+    expect(() => parseServerEnv({ ...valid, VEX_API_KEY: "your-vex-events-api-key" })).toThrow(/VEX_API_KEY/);
+  });
+
+  it("allows the YouTube key to be missing for now", () => {
+    expect(parseServerEnv({ ...valid, YOUTUBE_API_KEY: "your-youtube-data-api-key" }).YOUTUBE_API_KEY).toBeUndefined();
   });
 
   it("rejects a Supabase URL that is not a URL", () => {
