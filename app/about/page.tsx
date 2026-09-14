@@ -34,10 +34,26 @@ export default function AboutPage() {
           <li>On the event page, pick the team you want to scout.</li>
           <li>On the team page, press Auton or Driver on any match. If the match has a clip, it plays straight away.</li>
           <li>
-            If there is no clip, paste that event&apos;s YouTube livestream link, play the video to the moment any match
-            starts, and press Set start here on that match. Every other match on that stream then lines up.
+            If there is no clip, paste that event&apos;s livestream link, play the video to the moment any match starts,
+            and press Set start here on that match. Every other match on that stream then lines up.
           </li>
         </ol>
+      </Section>
+
+      <Section title="Livestream links that work">
+        <ul className="list-disc space-y-1 pl-5">
+          <li>YouTube: videos and livestreams, for example youtube.com/watch?v= or youtu.be links.</li>
+          <li>
+            Twitch: past broadcasts, for example twitch.tv/videos/ followed by numbers. A live channel link will not
+            sync, so wait until the event ends and use the past broadcast.
+          </li>
+          <li>Vimeo: single videos, including unlisted ones, for example vimeo.com/ followed by numbers.</li>
+          <li>BoxCast: single broadcasts, for example boxcast.tv/view/ links. A whole channel link will not work.</li>
+        </ul>
+        <p>
+          Other sites, and videos that are private or do not allow embedding, will not play. Some event organisers
+          only let their streams play on their own website.
+        </p>
       </Section>
 
       <Section title="Where the videos come from">
@@ -47,8 +63,9 @@ export default function AboutPage() {
           official results.
         </p>
         <p>
-          Other events are watched through their own livestreams, which you paste in. Every video plays through
-          YouTube&apos;s own player in privacy-enhanced mode and belongs to its owner.
+          Other events are watched through their own livestreams, which you paste in. Every video plays in its own
+          site&apos;s player and belongs to its owner. YouTube plays in privacy-enhanced mode, Vimeo with tracking turned
+          off, and BoxCast in a walled-off frame that cannot see anything else on this site.
         </p>
       </Section>
 

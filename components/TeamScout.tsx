@@ -5,19 +5,20 @@ import type { MatchTiming } from "@/config/seasons";
 import { segmentsFromChapters } from "@/lib/footage/chapters";
 import { autonClip, driverClip, seekSeconds } from "@/lib/footage/seek";
 import { streamStartFromAnchor } from "@/lib/footage/sync";
-import { parseYouTubeVideoId } from "@/lib/footage/youtube-url";
 import { formatClock, formatEventDates } from "@/lib/format";
+import { parseVideoLink } from "@/lib/video/parse";
+import { sameVideo, type VideoRef } from "@/lib/video/platforms";
+import { readSync, type StoredSync, writeSync } from "@/lib/video/sync-storage";
 import type { TeamMatch } from "@/lib/vex/matches";
 import { inputClass, primaryButtonClass, secondaryButtonClass } from "./ui";
-import { type PlayerHandle, type PlayRequest, YouTubePlayer } from "./YouTubePlayer";
+import { type PlayerHandle, type PlayRequest, VideoPlayer } from "./VideoPlayer";
 
 export type MatchClip = { videoId: string; autonStartS: number | null; driverStartS: number | null };
 export type ClipsResult = { status: "ready" | "unavailable"; clips: Record<number, MatchClip> };
 export type ScoutEvent = { sku: string; name: string; start: string | null; end: string | null; matches: TeamMatch[] };
 
-type SyncState = { videoId: string; streamStart: string | null };
 type Part = "auton" | "driver";
-type Syncs = Record<string, SyncState | null>;
+type Syncs = Record<string, StoredSync | null>;
 
 type RowActions = {
   onPlay: (match: TeamMatch, part: Part, event: ScoutEvent, clip: MatchClip | null) => void;
@@ -25,7 +26,6 @@ type RowActions = {
 };
 
 const CHANGE_EVENT = "scout-reel-sync-change";
-const storageKey = (sku: string) => `scout-reel.sync.v1.${sku}`;
 const count = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 
 function subscribe(onChange: () => void) {
@@ -37,22 +37,9 @@ function subscribe(onChange: () => void) {
   };
 }
 
-function readRaw(key: string): string | null {
+function storedSync(sku: string): StoredSync | null {
   try {
-    return window.localStorage.getItem(key);
-  } catch {
-    return null;
-  }
-}
-
-function parseSync(raw: string | null): SyncState | null {
-  if (!raw) return null;
-  try {
-    const value = JSON.parse(raw) as Partial<SyncState>;
-    if (typeof value.videoId !== "string" || !parseYouTubeVideoId(value.videoId)) return null;
-    const streamStart =
-      typeof value.streamStart === "string" && !Number.isNaN(Date.parse(value.streamStart)) ? value.streamStart : null;
-    return { videoId: value.videoId, streamStart };
+    return readSync(window.localStorage, sku);
   } catch {
     return null;
   }
@@ -91,18 +78,19 @@ export function TeamScout({
   clipsPromise: Promise<ClipsResult>;
 }) {
   const skus = useMemo(() => events.map((e) => e.sku), [events]);
+  // A string snapshot, so the store only reports a change when stored values really change.
   const snapshot = useSyncExternalStore(
     subscribe,
-    () => JSON.stringify(skus.map((sku) => readRaw(storageKey(sku)))),
+    () => JSON.stringify(skus.map(storedSync)),
     () => "[]",
   );
   // Fallback when the browser blocks storage, so syncing still works for this visit.
   const [memory, setMemory] = useState<Syncs>({});
   const syncs = useMemo(() => {
-    const stored = JSON.parse(snapshot) as (string | null)[];
+    const stored = JSON.parse(snapshot) as (StoredSync | null)[];
     const result: Syncs = {};
     skus.forEach((sku, i) => {
-      result[sku] = sku in memory ? memory[sku] : parseSync(stored[i] ?? null);
+      result[sku] = sku in memory ? memory[sku] : (stored[i] ?? null);
     });
     return result;
   }, [snapshot, skus, memory]);
@@ -121,13 +109,12 @@ export function TeamScout({
   const player = useRef<PlayerHandle>(null);
   const linkInput = useRef<HTMLInputElement>(null);
 
-  const currentVideoId = request?.videoId ?? streamSync?.videoId ?? null;
+  const currentVideo = request?.video ?? streamSync?.video ?? null;
   const matchCount = events.reduce((n, e) => n + e.matches.length, 0);
 
-  function save(sku: string, next: SyncState | null) {
+  function save(sku: string, next: StoredSync | null) {
     try {
-      if (next) window.localStorage.setItem(storageKey(sku), JSON.stringify(next));
-      else window.localStorage.removeItem(storageKey(sku));
+      writeSync(window.localStorage, sku, next);
       window.dispatchEvent(new Event(CHANGE_EVENT));
     } catch {
       // Storage unavailable; keep the value in memory for this visit instead.
@@ -135,8 +122,8 @@ export function TeamScout({
     }
   }
 
-  function startPlayback(videoId: string, start: number, end: number) {
-    setRequest((prev) => ({ videoId, start, end, nonce: (prev?.nonce ?? 0) + 1 }));
+  function startPlayback(video: VideoRef, start: number, end: number) {
+    setRequest((prev) => ({ video, start, end, nonce: (prev?.nonce ?? 0) + 1 }));
   }
 
   function chooseStreamEvent(sku: string) {
@@ -148,9 +135,9 @@ export function TeamScout({
   function loadVideo(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (!streamSku || !streamEvent) return;
-    const videoId = parseYouTubeVideoId(link);
-    if (!videoId) {
-      setLinkError("That is not a YouTube video link.");
+    const parsed = parseVideoLink(link);
+    if (!parsed.ok) {
+      setLinkError(parsed.error);
       return;
     }
     setLinkError(null);
@@ -159,10 +146,11 @@ export function TeamScout({
     setMessage(
       `Livestream loaded for ${streamEvent.name}. Play it to the moment any of its matches starts, then press Set start here on that match.`,
     );
-    save(streamSku, { videoId, streamStart: streamSync?.videoId === videoId ? streamSync.streamStart : null });
+    const keepStart = sameVideo(streamSync?.video, parsed.video) ? (streamSync?.streamStart ?? null) : null;
+    save(streamSku, { video: parsed.video, streamStart: keepStart });
   }
 
-  function setStart(m: TeamMatch, event: ScoutEvent) {
+  async function setStart(m: TeamMatch, event: ScoutEvent) {
     if (!m.started) return;
     const sync = syncs[event.sku];
     if (event.sku !== streamSku || !sync) {
@@ -175,19 +163,19 @@ export function TeamScout({
       }
       return;
     }
-    if (currentVideoId !== sync.videoId) {
+    if (!sameVideo(currentVideo, sync.video)) {
       setRequest(null);
       setMessage(`Switched back to the livestream. Play it to the start of ${m.name}, then press Set start here again.`);
       return;
     }
-    const t = player.current?.currentTime();
+    const t = (await player.current?.currentTime()) ?? null;
     if (t == null) {
       setMessage("Start playing the livestream first, then press Set start here.");
       return;
     }
     const streamStart = streamStartFromAnchor(m.started, t);
     if (!streamStart) return;
-    save(event.sku, { videoId: sync.videoId, streamStart });
+    save(event.sku, { video: sync.video, streamStart });
     setActiveId(m.id);
     setMessage(`Synced. ${m.name} starts at ${formatClock(t)} in this video, so the other matches from ${event.name} now line up.`);
   }
@@ -197,7 +185,7 @@ export function TeamScout({
       const segment = segmentsFromChapters(clip, timing)[part];
       setActiveId(m.id);
       setMessage(null);
-      startPlayback(clip.videoId, segment.start, segment.end);
+      startPlayback({ platform: "youtube", id: clip.videoId }, segment.start, segment.end);
       return;
     }
     const sync = syncs[event.sku];
@@ -217,7 +205,7 @@ export function TeamScout({
       return;
     }
     const seek = seekSeconds(m.started, sync.streamStart);
-    const duration = currentVideoId === sync.videoId ? (player.current?.duration() ?? null) : null;
+    const duration = sameVideo(currentVideo, sync.video) ? (player.current?.duration() ?? null) : null;
     if (seek === null || (duration !== null && seek > duration)) {
       setMessage(`${m.name} is not in this livestream. It may be on a different stream or day of ${event.name}.`);
       return;
@@ -225,16 +213,21 @@ export function TeamScout({
     const segment = part === "auton" ? autonClip(seek, timing) : driverClip(seek, timing);
     setActiveId(m.id);
     setMessage(null);
-    startPlayback(sync.videoId, segment.start, segment.end);
+    startPlayback(sync.video, segment.start, segment.end);
   }
 
-  const actions: RowActions = { onPlay: play, onSetStart: setStart };
+  const actions: RowActions = {
+    onPlay: play,
+    onSetStart: (m, event) => {
+      void setStart(m, event);
+    },
+  };
   const listProps = { events, syncs, activeId, focusSku, actions };
 
   return (
     <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_400px] lg:grid-rows-[auto_1fr]">
       <div className="sticky top-0 z-10 bg-background pb-2 lg:static lg:col-start-1 lg:row-start-1 lg:pb-0">
-        <YouTubePlayer videoId={streamSync?.videoId ?? null} request={request} ref={player} />
+        <VideoPlayer video={streamSync?.video ?? null} request={request} ref={player} />
         {message ? (
           <p className="mt-2 text-sm text-muted" aria-live="polite">
             {message}
@@ -264,9 +257,13 @@ export function TeamScout({
             Watch from a livestream
           </h2>
           <p className="text-sm text-muted">
-            Robot Stats clips cover most Signature event matches. For any other match, load that event&apos;s YouTube
-            livestream here, play it to the moment one of its matches starts, and press Set start here on that match.
-            The other matches from that event on the same stream then line up.
+            Robot Stats clips cover most Signature event matches. For any other match, load that event&apos;s livestream
+            here, play it to the moment one of its matches starts, and press Set start here on that match. The other
+            matches from that event on the same stream then line up.
+          </p>
+          <p className="text-sm text-muted">
+            Links that work: YouTube videos and livestreams, Twitch past broadcasts, Vimeo videos, and BoxCast
+            broadcasts.
           </p>
           <label className="flex flex-col gap-1 text-sm">
             <span className="font-medium">Event</span>
@@ -284,14 +281,14 @@ export function TeamScout({
           </label>
           <form onSubmit={loadVideo} className="flex flex-col gap-2 sm:flex-row">
             <label htmlFor="video-link" className="sr-only">
-              YouTube livestream link for the selected event
+              Livestream link for the selected event
             </label>
             <input
               ref={linkInput}
               id="video-link"
               value={link}
               onChange={(e) => setLink(e.target.value)}
-              placeholder="https://www.youtube.com/watch?v=..."
+              placeholder="Paste a YouTube, Twitch, Vimeo or BoxCast link"
               className={inputClass}
               autoComplete="off"
               aria-invalid={linkError ? true : undefined}
