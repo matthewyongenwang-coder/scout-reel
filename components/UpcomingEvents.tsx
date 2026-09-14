@@ -8,7 +8,7 @@ import { inputClass } from "./ui";
 
 const PAGE = 50;
 
-export function UpcomingEvents({ events }: { events: EventSummary[] }) {
+export function UpcomingEvents({ events, today }: { events: EventSummary[]; today: string }) {
   const [query, setQuery] = useState("");
   const deferred = useDeferredValue(query);
   const q = deferred.trim().toLowerCase();
@@ -39,21 +39,30 @@ export function UpcomingEvents({ events }: { events: EventSummary[] }) {
             : `${matches.length} ${matches.length === 1 ? "event" : "events"}`}
       </p>
       <ul className="divide-y divide-line rounded-md border border-line bg-panel">
-        {shown.map((e) => (
-          <li key={e.id}>
-            <Link
-              href={`/event/${e.sku}`}
-              className="flex flex-col gap-0.5 px-4 py-3 hover:bg-background sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
-            >
-              <span className="font-medium">{e.name}</span>
-              <span className="shrink-0 text-sm text-muted">
-                {[formatEventDates(e.start, e.end), formatLocation([e.city, e.region]), e.level === "Other" ? null : e.level]
-                  .filter(Boolean)
-                  .join(", ")}
-              </span>
-            </Link>
-          </li>
-        ))}
+        {shown.map((e) => {
+          // Events in the list have not ended, so one that has started is happening now.
+          const inProgress = (e.start ?? "").slice(0, 10) <= today;
+          return (
+            <li key={e.id}>
+              <Link
+                href={`/event/${e.sku}`}
+                className="flex flex-col gap-0.5 px-4 py-3 hover:bg-background sm:flex-row sm:items-baseline sm:justify-between sm:gap-4"
+              >
+                <span className="font-medium">{e.name}</span>
+                <span className="shrink-0 text-sm text-muted">
+                  {[
+                    inProgress ? "In progress" : null,
+                    formatEventDates(e.start, e.end),
+                    formatLocation([e.city, e.region]),
+                    e.level === "Other" ? null : e.level,
+                  ]
+                    .filter(Boolean)
+                    .join(", ")}
+                </span>
+              </Link>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

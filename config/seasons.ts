@@ -17,7 +17,9 @@ export type MatchTiming = {
 
 export const PROGRAM_V5RC = 1;
 
-const V5RC_DEFAULT: MatchTiming = { autonS: 15, driverS: 105, defaultGapS: 10, leadS: 3 };
+// Measured gaps between auton end and driver start: 23s on the LAUNCH at EATON 2025
+// livestream, 19s and 8s in Robot Stats clip chapters. 18s is a middle estimate.
+const V5RC_DEFAULT: MatchTiming = { autonS: 15, driverS: 105, defaultGapS: 18, leadS: 3 };
 
 /** Season-specific overrides, keyed by API season id. Empty until a season differs. */
 const SEASON_OVERRIDES: Record<number, MatchTiming> = {};

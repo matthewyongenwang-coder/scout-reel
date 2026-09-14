@@ -19,9 +19,12 @@ export function TeamList({ eventSku, teams }: { eventSku: string; teams: TeamSum
   return (
     <section className="flex flex-col gap-3" aria-labelledby="teams-heading">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
-        <h2 id="teams-heading" className="text-lg font-semibold">
-          Teams attending <span className="font-normal text-muted">({teams.length})</span>
-        </h2>
+        <div>
+          <h2 id="teams-heading" className="text-lg font-semibold">
+            Teams attending <span className="font-normal text-muted">({teams.length})</span>
+          </h2>
+          <p className="text-sm text-muted">Pick a team to see its matches and match videos from this season.</p>
+        </div>
         <label className="flex flex-col gap-1 text-sm sm:w-80">
           <span className="font-medium">Search teams</span>
           <input

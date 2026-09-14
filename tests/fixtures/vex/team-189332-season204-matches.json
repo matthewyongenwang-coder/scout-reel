@@ -1,0 +1,1989 @@
+{
+  "meta": {
+    "current_page": 1,
+    "first_page_url": "https://events.vex.com/api/v2/teams/189332/matches?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "https://events.vex.com/api/v2/teams/189332/matches?page=1",
+    "next_page_url": null,
+    "path": "https://events.vex.com/api/v2/teams/189332/matches",
+    "per_page": 250,
+    "prev_page_url": null,
+    "to": 29,
+    "total": 29
+  },
+  "data": [
+    {
+      "id": 150416439,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 2,
+      "scheduled": "2026-08-30T13:38:00-04:00",
+      "started": "2026-08-30T13:40:34-04:00",
+      "field": "Main Field",
+      "scored": false,
+      "name": "Qualifier #2",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 45,
+          "teams": [
+            {
+              "team": {
+                "id": 139066,
+                "name": "98040C",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 177183,
+                "name": "938Y",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 67,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 123981,
+                "name": "938X",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 149826639,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 4,
+      "scheduled": "2026-07-24T22:21:00-04:00",
+      "started": "2026-07-24T22:21:27-04:00",
+      "field": "2",
+      "scored": false,
+      "name": "Qualifier #4",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 185,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 197743,
+                "name": "8632X",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 58,
+          "teams": [
+            {
+              "team": {
+                "id": 198501,
+                "name": "88518Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 179249,
+                "name": "71639K",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 150078321,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 4,
+      "scheduled": "2026-08-07T10:09:00-04:00",
+      "started": "2026-08-07T10:09:35-04:00",
+      "field": "Digikey",
+      "scored": false,
+      "name": "Qualifier #4",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 78,
+          "teams": [
+            {
+              "team": {
+                "id": 158973,
+                "name": "46779C",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 153523,
+                "name": "2899A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 100,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 170152,
+                "name": "11811A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 150416445,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 8,
+      "scheduled": "2026-08-30T14:26:00-04:00",
+      "started": "2026-08-30T14:35:10-04:00",
+      "field": "Main Field",
+      "scored": false,
+      "name": "Qualifier #8",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 74,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 198884,
+                "name": "886J",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 54,
+          "teams": [
+            {
+              "team": {
+                "id": 152010,
+                "name": "886A",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 170526,
+                "name": "886U",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 149826647,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 12,
+      "scheduled": "2026-07-24T23:17:00-04:00",
+      "started": "2026-07-24T23:11:11-04:00",
+      "field": "2",
+      "scored": false,
+      "name": "Qualifier #12",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 96,
+          "teams": [
+            {
+              "team": {
+                "id": 197624,
+                "name": "20910T",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 62,
+          "teams": [
+            {
+              "team": {
+                "id": 198497,
+                "name": "6508X",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 102421,
+                "name": "54001A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 150416449,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 12,
+      "scheduled": "2026-08-30T14:58:00-04:00",
+      "started": "2026-08-30T16:09:18-04:00",
+      "field": "Main Field",
+      "scored": false,
+      "name": "Qualifier #12",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 65,
+          "teams": [
+            {
+              "team": {
+                "id": 173767,
+                "name": "886M",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 185771,
+                "name": "10836X",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 45,
+          "teams": [
+            {
+              "team": {
+                "id": 165692,
+                "name": "886V",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 150416454,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 17,
+      "scheduled": "2026-08-30T16:36:00-04:00",
+      "started": "2026-08-30T17:01:19-04:00",
+      "field": "Main Field",
+      "scored": false,
+      "name": "Qualifier #17",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 85,
+          "teams": [
+            {
+              "team": {
+                "id": 157636,
+                "name": "44344S",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 43,
+          "teams": [
+            {
+              "team": {
+                "id": 139066,
+                "name": "98040C",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 74092,
+                "name": "1010Y",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 149826652,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 17,
+      "scheduled": "2026-07-24T23:52:00-04:00",
+      "started": "2026-07-24T23:47:45-04:00",
+      "field": "1",
+      "scored": false,
+      "name": "Qualifier #17",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 35,
+          "teams": [
+            {
+              "team": {
+                "id": 181661,
+                "name": "20360A",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 112041,
+                "name": "691A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 165,
+          "teams": [
+            {
+              "team": {
+                "id": 191054,
+                "name": "24067Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 150416460,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 23,
+      "scheduled": "2026-08-30T17:30:00-04:00",
+      "started": "2026-08-30T17:54:37-04:00",
+      "field": "Main Field",
+      "scored": false,
+      "name": "Qualifier #23",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 95,
+          "teams": [
+            {
+              "team": {
+                "id": 170526,
+                "name": "886U",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 103,
+          "teams": [
+            {
+              "team": {
+                "id": 181767,
+                "name": "886E",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 143647,
+                "name": "10G",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 149826658,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 23,
+      "scheduled": "2026-07-25T01:28:00-04:00",
+      "started": "2026-07-25T01:25:53-04:00",
+      "field": "1",
+      "scored": false,
+      "name": "Qualifier #23",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 0,
+          "teams": [
+            {
+              "team": {
+                "id": 153670,
+                "name": "18190X",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 185635,
+                "name": "5138M",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 195,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 185944,
+                "name": "3283A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 150416468,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 31,
+      "scheduled": "2026-08-30T18:42:00-04:00",
+      "started": "2026-08-30T18:58:42-04:00",
+      "field": "Main Field",
+      "scored": false,
+      "name": "Qualifier #31",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 45,
+          "teams": [
+            {
+              "team": {
+                "id": 197576,
+                "name": "1523A",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 198455,
+                "name": "5798V",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 83,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 197455,
+                "name": "886F",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 149826667,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 32,
+      "scheduled": "2026-07-25T02:31:00-04:00",
+      "started": "2026-07-25T02:19:45-04:00",
+      "field": "2",
+      "scored": false,
+      "name": "Qualifier #32",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 58,
+          "teams": [
+            {
+              "team": {
+                "id": 189614,
+                "name": "99236M",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 198317,
+                "name": "91200Y",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 62,
+          "teams": [
+            {
+              "team": {
+                "id": 179252,
+                "name": "71639V",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 149826672,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 37,
+      "scheduled": "2026-07-25T03:06:00-04:00",
+      "started": "2026-07-25T02:52:06-04:00",
+      "field": "1",
+      "scored": false,
+      "name": "Qualifier #37",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 68,
+          "teams": [
+            {
+              "team": {
+                "id": 155368,
+                "name": "692R",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 85,
+          "teams": [
+            {
+              "team": {
+                "id": 186183,
+                "name": "2766A",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 188023,
+                "name": "88941C",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 150078356,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 39,
+      "scheduled": "2026-08-07T11:54:00-04:00",
+      "started": "2026-08-07T12:03:10-04:00",
+      "field": "Polar",
+      "scored": false,
+      "name": "Qualifier #39",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 80,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 179010,
+                "name": "2551A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 80,
+          "teams": [
+            {
+              "team": {
+                "id": 143647,
+                "name": "10G",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 84366,
+                "name": "7225Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 149826680,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 45,
+      "scheduled": "2026-07-25T20:30:00-04:00",
+      "started": "2026-07-25T20:30:29-04:00",
+      "field": "1",
+      "scored": false,
+      "name": "Qualifier #45",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 75,
+          "teams": [
+            {
+              "team": {
+                "id": 197993,
+                "name": "59888X",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 129774,
+                "name": "89866C",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 115,
+          "teams": [
+            {
+              "team": {
+                "id": 125350,
+                "name": "54001Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 149826689,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 54,
+      "scheduled": "2026-07-25T21:33:00-04:00",
+      "started": "2026-07-25T21:23:19-04:00",
+      "field": "2",
+      "scored": false,
+      "name": "Qualifier #54",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 117,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 198133,
+                "name": "13880A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 121,
+          "teams": [
+            {
+              "team": {
+                "id": 197745,
+                "name": "2966X",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189282,
+                "name": "2815Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 150078384,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 67,
+      "scheduled": "2026-08-07T13:48:00-04:00",
+      "started": "2026-08-07T13:51:12-04:00",
+      "field": "Polar",
+      "scored": false,
+      "name": "Qualifier #67",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 110,
+          "teams": [
+            {
+              "team": {
+                "id": 184557,
+                "name": "3239V",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 52,
+          "teams": [
+            {
+              "team": {
+                "id": 196953,
+                "name": "98601S",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 197476,
+                "name": "90110X",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 150078403,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 86,
+      "scheduled": "2026-08-07T14:45:00-04:00",
+      "started": "2026-08-07T14:52:07-04:00",
+      "field": "SICK",
+      "scored": false,
+      "name": "Qualifier #86",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 100,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 197032,
+                "name": "2771R",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 40,
+          "teams": [
+            {
+              "team": {
+                "id": 153944,
+                "name": "8110V",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 111779,
+                "name": "355T",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 150078436,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 119,
+      "scheduled": "2026-08-07T16:24:00-04:00",
+      "started": "2026-08-07T16:24:07-04:00",
+      "field": "Polar",
+      "scored": false,
+      "name": "Qualifier #119",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 18,
+          "teams": [
+            {
+              "team": {
+                "id": 71713,
+                "name": "1532D",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 197410,
+                "name": "3300Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 20,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 187270,
+                "name": "7447X",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 150078479,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 162,
+      "scheduled": "2026-08-08T10:03:00-04:00",
+      "started": "2026-08-08T10:02:52-04:00",
+      "field": "SICK",
+      "scored": false,
+      "name": "Qualifier #162",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 52,
+          "teams": [
+            {
+              "team": {
+                "id": 48732,
+                "name": "8110A",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 196942,
+                "name": "32C",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 120,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 184998,
+                "name": "2577X",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 150078510,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 193,
+      "scheduled": "2026-08-08T11:36:00-04:00",
+      "started": "2026-08-08T11:38:39-04:00",
+      "field": "SCTCC",
+      "scored": false,
+      "name": "Qualifier #193",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 72,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 155341,
+                "name": "56549E",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 10,
+          "teams": [
+            {
+              "team": {
+                "id": 189629,
+                "name": "99209X",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 147847,
+                "name": "19109A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 150078524,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 207,
+      "scheduled": "2026-08-08T12:18:00-04:00",
+      "started": "2026-08-08T12:21:19-04:00",
+      "field": "Polar",
+      "scored": false,
+      "name": "Qualifier #207",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 88,
+          "teams": [
+            {
+              "team": {
+                "id": 184612,
+                "name": "2429A",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 155337,
+                "name": "56549A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 103,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 40093,
+                "name": "1028A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 150078561,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 2,
+      "instance": 1,
+      "matchnum": 244,
+      "scheduled": "2026-08-08T14:39:00-04:00",
+      "started": "2026-08-08T14:38:12-04:00",
+      "field": "Digikey",
+      "scored": false,
+      "name": "Qualifier #244",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 97,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 145984,
+                "name": "13056A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 80,
+          "teams": [
+            {
+              "team": {
+                "id": 153722,
+                "name": "2142S",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 186794,
+                "name": "9185K",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    },
+    {
+      "id": 149826694,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 3,
+      "instance": 1,
+      "matchnum": 1,
+      "scheduled": null,
+      "started": "2026-07-26T01:17:36-04:00",
+      "field": "1",
+      "scored": false,
+      "name": "QF #1-1",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 20,
+          "teams": [
+            {
+              "team": {
+                "id": 181661,
+                "name": "20360A",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 198135,
+                "name": "4511P",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 126,
+          "teams": [
+            {
+              "team": {
+                "id": 189282,
+                "name": "2815Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 150416472,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 3,
+      "instance": 1,
+      "matchnum": 1,
+      "scheduled": null,
+      "started": "2026-08-30T19:54:07-04:00",
+      "field": null,
+      "scored": false,
+      "name": "QF #1-1",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 32,
+          "teams": [
+            {
+              "team": {
+                "id": 74092,
+                "name": "1010Y",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 152010,
+                "name": "886A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 100,
+          "teams": [
+            {
+              "team": {
+                "id": 143647,
+                "name": "10G",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 149826698,
+      "event": {
+        "id": 64431,
+        "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+        "code": "RE-V5RC-26-4431"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 4,
+      "instance": 1,
+      "matchnum": 1,
+      "scheduled": null,
+      "started": "2026-07-26T01:39:10-04:00",
+      "field": "1",
+      "scored": false,
+      "name": "SF #1-1",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 148,
+          "teams": [
+            {
+              "team": {
+                "id": 125350,
+                "name": "54001Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 198133,
+                "name": "13880A",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 0,
+          "teams": [
+            {
+              "team": {
+                "id": 189282,
+                "name": "2815Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-07-28T22:13:43-04:00"
+    },
+    {
+      "id": 150416476,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 4,
+      "instance": 1,
+      "matchnum": 1,
+      "scheduled": null,
+      "started": "2026-08-30T20:25:45-04:00",
+      "field": null,
+      "scored": false,
+      "name": "SF #1-1",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 38,
+          "teams": [
+            {
+              "team": {
+                "id": 165692,
+                "name": "886V",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 177183,
+                "name": "938Y",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 143,
+          "teams": [
+            {
+              "team": {
+                "id": 143647,
+                "name": "10G",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 150416478,
+      "event": {
+        "id": 64843,
+        "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+        "code": "RE-V5RC-26-4843"
+      },
+      "division": {
+        "id": 1,
+        "name": "Division 1",
+        "code": null
+      },
+      "round": 5,
+      "instance": 1,
+      "matchnum": 1,
+      "scheduled": null,
+      "started": "2026-08-30T20:47:50-04:00",
+      "field": null,
+      "scored": false,
+      "name": "Final #1-1",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 38,
+          "teams": [
+            {
+              "team": {
+                "id": 181767,
+                "name": "886E",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 198455,
+                "name": "5798V",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 113,
+          "teams": [
+            {
+              "team": {
+                "id": 143647,
+                "name": "10G",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-30T21:03:24-04:00"
+    },
+    {
+      "id": 150078578,
+      "event": {
+        "id": 64244,
+        "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+        "code": "RE-V5RC-26-4244"
+      },
+      "division": {
+        "id": 1,
+        "name": "UND",
+        "code": null
+      },
+      "round": 6,
+      "instance": 4,
+      "matchnum": 1,
+      "scheduled": null,
+      "started": "2026-08-08T16:30:35-04:00",
+      "field": "Digikey",
+      "scored": false,
+      "name": "R16 #4-1",
+      "alliances": [
+        {
+          "color": "blue",
+          "score": 63,
+          "teams": [
+            {
+              "team": {
+                "id": 93662,
+                "name": "2131N",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 109693,
+                "name": "2145Z",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        },
+        {
+          "color": "red",
+          "score": 42,
+          "teams": [
+            {
+              "team": {
+                "id": 189332,
+                "name": "96Z",
+                "code": null
+              },
+              "sitting": false
+            },
+            {
+              "team": {
+                "id": 169767,
+                "name": "1698V",
+                "code": null
+              },
+              "sitting": false
+            }
+          ]
+        }
+      ],
+      "updated_at": "2026-08-08T18:40:47-04:00"
+    }
+  ]
+}

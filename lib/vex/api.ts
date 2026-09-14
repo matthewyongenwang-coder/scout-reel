@@ -2,7 +2,8 @@ import "server-only";
 import { cacheLife, cacheTag } from "next/cache";
 import { vex } from "./client";
 import type { ApiMatch } from "./matches";
-import { eventCacheSeconds } from "./ttl";
+import { isCurrentOrUpcoming, type SeasonMatch } from "./season";
+import { CACHE_SECONDS, eventCacheSeconds } from "./ttl";
 
 /**
  * Cached reads from the VEX Events API. Results live in the shared remote cache,
@@ -169,17 +170,43 @@ export async function getCurrentSeasonId(programId: number, today: string): Prom
   return started[0]?.id ?? null;
 }
 
-/** Events in a season starting on or after `today` (YYYY-MM-DD), soonest first. */
+/**
+ * Events in a season that have not ended by `today` (YYYY-MM-DD), soonest first.
+ * The whole season is read because the API's date filters cannot find events that are already underway.
+ */
 export async function getUpcomingEvents(seasonId: number, today: string): Promise<EventSummary[]> {
   "use cache: remote";
   cacheLife("hours");
   cacheTag(`upcoming:${seasonId}`);
-  const res = await vex().api.PaginatedGET("/events", {
-    params: { query: { "season[]": [seasonId], start: `${today}T00:00:00Z` } },
-  });
+  const res = await vex().api.PaginatedGET("/events", { params: { query: { "season[]": [seasonId] } } });
   if (res.error) throw new VexApiError(statusOf(res), "Could not load upcoming events.");
   return (res.data as RawEvent[])
     .map(toEventSummary)
-    .filter((e) => !e.name.startsWith("CANCELED"))
+    .filter((e) => isCurrentOrUpcoming(e, today))
     .sort((a, b) => (a.start ?? "").localeCompare(b.start ?? ""));
+}
+
+/** Every event a team is registered for in a season, played or not. */
+export async function getTeamSeasonEvents(teamId: number, seasonId: number): Promise<EventSummary[]> {
+  "use cache: remote";
+  cacheLife("hours");
+  cacheTag(`team-events:${teamId}:${seasonId}`);
+  const res = await vex().api.PaginatedGET("/teams/{id}/events", {
+    params: { path: { id: teamId }, query: { "season[]": [seasonId] } },
+  });
+  if (res.error) throw new VexApiError(statusOf(res), "Could not load this team's events.");
+  return (res.data as RawEvent[]).map(toEventSummary);
+}
+
+/** Every match a team played in a season, across all events. `live` shortens the cache while an event is running. */
+export async function getTeamSeasonMatches(teamId: number, seasonId: number, live: boolean): Promise<SeasonMatch[]> {
+  "use cache: remote";
+  if (live) cacheLife(lifetime(CACHE_SECONDS.live));
+  else cacheLife("hours");
+  cacheTag(`team-matches:${teamId}:${seasonId}`);
+  const res = await vex().api.PaginatedGET("/teams/{id}/matches", {
+    params: { path: { id: teamId }, query: { "season[]": [seasonId] } },
+  });
+  if (res.error) throw new VexApiError(statusOf(res), "Could not load this team's matches.");
+  return res.data as unknown as SeasonMatch[];
 }

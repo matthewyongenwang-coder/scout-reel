@@ -1,0 +1,353 @@
+{
+  "meta": {
+    "current_page": 1,
+    "first_page_url": "https://events.vex.com/api/v2/teams/189332/events?page=1",
+    "from": 1,
+    "last_page": 1,
+    "last_page_url": "https://events.vex.com/api/v2/teams/189332/events?page=1",
+    "next_page_url": null,
+    "path": "https://events.vex.com/api/v2/teams/189332/events",
+    "per_page": 250,
+    "prev_page_url": null,
+    "to": 6,
+    "total": 6
+  },
+  "data": [
+    {
+      "id": 64431,
+      "sku": "RE-V5RC-26-4431",
+      "name": "明德启智杯2026-2027 VEX机器人邀请赛: V5RC 全域接管 高中组",
+      "start": "2026-07-24T00:00:00-04:00",
+      "end": "2026-07-26T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "湖北省武汉市洪山区珞喻路1037号",
+        "address_1": "",
+        "address_2": null,
+        "city": "WUHAN",
+        "region": "Hubei",
+        "postcode": "",
+        "country": "China",
+        "coordinates": {
+          "lat": 30.59276,
+          "lon": 114.30525
+        }
+      },
+      "locations": {
+        "2026-07-24": {
+          "venue": "湖北省武汉市洪山区珞喻路1037号",
+          "address_1": "",
+          "address_2": null,
+          "city": "WUHAN",
+          "region": "Hubei",
+          "postcode": "",
+          "country": "China",
+          "coordinates": {
+            "lat": 30.59276,
+            "lon": 114.30525
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Division 1",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": true,
+      "event_type": null
+    },
+    {
+      "id": 64244,
+      "sku": "RE-V5RC-26-4244",
+      "name": "University of North Dakota Signature at the Mall of America: VEX V5 Robotics Competition, High School Presented by the College of Engineering and Mines",
+      "start": "2026-08-06T00:00:00-04:00",
+      "end": "2026-08-08T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "Mall of America®",
+        "address_1": "60 East Broadway",
+        "address_2": null,
+        "city": "Bloomington",
+        "region": "Minnesota",
+        "postcode": "55425",
+        "country": "United States",
+        "coordinates": {
+          "lat": 44.854698,
+          "lon": -93.241951
+        }
+      },
+      "locations": {
+        "2026-08-06": {
+          "venue": "Mall of America®",
+          "address_1": "60 East Broadway",
+          "address_2": null,
+          "city": "Bloomington",
+          "region": "Minnesota",
+          "postcode": "55425",
+          "country": "United States",
+          "coordinates": {
+            "lat": 44.854698,
+            "lon": -93.241951
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "UND",
+          "order": 1
+        }
+      ],
+      "level": "Signature",
+      "ongoing": false,
+      "awards_finalized": true,
+      "event_type": null
+    },
+    {
+      "id": 64843,
+      "sku": "RE-V5RC-26-4843",
+      "name": "MOTIONGREY Season Opener Qualifier at WPRA",
+      "start": "2026-08-30T00:00:00-04:00",
+      "end": "2026-08-30T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "Western Pacific Robotics Academy",
+        "address_1": "#227 7080 River Road",
+        "address_2": null,
+        "city": "Richmond",
+        "region": "British Columbia",
+        "postcode": "V6X 0R1",
+        "country": "Canada",
+        "coordinates": {
+          "lat": 49.17791,
+          "lon": -123.143481
+        }
+      },
+      "locations": {
+        "2026-08-30": {
+          "venue": "Western Pacific Robotics Academy",
+          "address_1": "#227 7080 River Road",
+          "address_2": null,
+          "city": "Richmond",
+          "region": "British Columbia",
+          "postcode": "V6X 0R1",
+          "country": "Canada",
+          "coordinates": {
+            "lat": 49.17791,
+            "lon": -123.143481
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Division 1",
+          "order": 1
+        }
+      ],
+      "level": "Other",
+      "ongoing": false,
+      "awards_finalized": true,
+      "event_type": null
+    },
+    {
+      "id": 64246,
+      "sku": "RE-V5RC-26-4246",
+      "name": "The Highlander Summit Signature 2026: VEX V5 Robotics Competition High School Override",
+      "start": "2026-09-25T00:00:00-04:00",
+      "end": "2026-09-27T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "NJIT Wellness and Events Center",
+        "address_1": "104 Lock Street",
+        "address_2": null,
+        "city": "Newark",
+        "region": "New Jersey",
+        "postcode": "07103",
+        "country": "United States",
+        "coordinates": {
+          "lat": 40.74231,
+          "lon": -74.180327
+        }
+      },
+      "locations": {
+        "2026-09-25": {
+          "venue": "NJIT Wellness and Events Center",
+          "address_1": "104 Lock Street",
+          "address_2": null,
+          "city": "Newark",
+          "region": "New Jersey",
+          "postcode": "07103",
+          "country": "United States",
+          "coordinates": {
+            "lat": 40.74231,
+            "lon": -74.180327
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default",
+          "order": 1
+        }
+      ],
+      "level": "Signature",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    },
+    {
+      "id": 64926,
+      "sku": "RE-V5RC-26-4926",
+      "name": "Harbor Havoc Signature Event: VEX V5 Robotics Competition - Override",
+      "start": "2026-10-16T00:00:00-04:00",
+      "end": "2026-10-17T00:00:00-04:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "Brick South",
+        "address_1": "15 Resurgam Place",
+        "address_2": null,
+        "city": "Portland",
+        "region": "Maine",
+        "postcode": "04102",
+        "country": "United States",
+        "coordinates": {
+          "lat": 43.650679,
+          "lon": -70.291372
+        }
+      },
+      "locations": {
+        "2026-10-16": {
+          "venue": "Brick South",
+          "address_1": "15 Resurgam Place",
+          "address_2": null,
+          "city": "Portland",
+          "region": "Maine",
+          "postcode": "04102",
+          "country": "United States",
+          "coordinates": {
+            "lat": 43.650679,
+            "lon": -70.291372
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default",
+          "order": 1
+        }
+      ],
+      "level": "Signature",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    },
+    {
+      "id": 65698,
+      "sku": "VE-V5-27-65698",
+      "name": "PYRS British Columbia VEX HS Provincial Championship: Sponsored by BCIT School of Energy",
+      "start": "2027-02-26T00:00:00-05:00",
+      "end": "2027-02-27T00:00:00-05:00",
+      "season": {
+        "id": 204,
+        "name": "VEX V5 Robotics Competition 2026-2027: Override",
+        "code": null
+      },
+      "program": {
+        "id": 1,
+        "name": "VEX V5 Robotics Competition",
+        "code": "V5RC"
+      },
+      "location": {
+        "venue": "BCIT Recreation Services",
+        "address_1": "3700 Willingdon Avenue",
+        "address_2": null,
+        "city": "Burnaby",
+        "region": "British Columbia",
+        "postcode": "V5G 3H2",
+        "country": "Canada",
+        "coordinates": {
+          "lat": 49.248575,
+          "lon": -123.002778
+        }
+      },
+      "locations": {
+        "2027-02-26": {
+          "venue": "BCIT Recreation Services",
+          "address_1": "3700 Willingdon Avenue",
+          "address_2": null,
+          "city": "Burnaby",
+          "region": "British Columbia",
+          "postcode": "V5G 3H2",
+          "country": "Canada",
+          "coordinates": {
+            "lat": 49.248575,
+            "lon": -123.002778
+          }
+        }
+      },
+      "divisions": [
+        {
+          "id": 1,
+          "name": "Default",
+          "order": 1
+        }
+      ],
+      "level": "Regional",
+      "ongoing": false,
+      "awards_finalized": false,
+      "event_type": null
+    }
+  ]
+}

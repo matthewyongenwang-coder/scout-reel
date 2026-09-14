@@ -27,12 +27,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link href="/" className="font-semibold tracking-tight">
               Scout Reel
             </Link>
-            <a
-              href="https://github.com/matthewyongenwang-coder/scout-reel"
-              className="text-sm text-muted hover:text-foreground"
-            >
-              GitHub
-            </a>
+            <nav className="flex items-center gap-4 text-sm">
+              <Link href="/about" className="text-muted hover:text-foreground">
+                About
+              </Link>
+              <a
+                href="https://github.com/matthewyongenwang-coder/scout-reel"
+                className="text-muted hover:text-foreground"
+              >
+                GitHub
+              </a>
+            </nav>
           </div>
         </header>
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">{children}</main>

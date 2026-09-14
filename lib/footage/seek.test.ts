@@ -37,7 +37,7 @@ describe("autonClip", () => {
 
 describe("driverClip", () => {
   it("starts after auton plus the default reset pause", () => {
-    expect(driverClip(900, timing)).toEqual({ start: 925, end: 1033 });
+    expect(driverClip(900, timing)).toEqual({ start: 933, end: 1041 });
   });
 
   it("uses a known gap from a driver anchor", () => {
@@ -49,6 +49,6 @@ describe("driverClip", () => {
   });
 
   it("ignores a next-match time that is before driver starts", () => {
-    expect(driverClip(900, timing, { nextMatchSeek: 910 }).end).toBe(1033);
+    expect(driverClip(900, timing, { nextMatchSeek: 910 }).end).toBe(1041);
   });
 });
