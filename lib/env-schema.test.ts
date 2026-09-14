@@ -9,8 +9,26 @@ const valid = {
 };
 
 describe("parseServerEnv", () => {
-  it("returns the parsed values when everything is set", () => {
-    expect(parseServerEnv(valid)).toEqual(valid);
+  it("returns the parsed values when everything is set, with accounts off by default", () => {
+    expect(parseServerEnv(valid)).toEqual({ ...valid, ACCOUNTS_ENABLED: false });
+  });
+
+  it("turns accounts on only for the exact value true", () => {
+    const site = { NEXT_PUBLIC_SITE_URL: "https://scout-reel-five.vercel.app" };
+    expect(parseServerEnv({ ...valid, ...site, ACCOUNTS_ENABLED: "true" }).ACCOUNTS_ENABLED).toBe(true);
+    expect(parseServerEnv({ ...valid, ACCOUNTS_ENABLED: "yes" }).ACCOUNTS_ENABLED).toBe(false);
+    expect(parseServerEnv({ ...valid, ACCOUNTS_ENABLED: "" }).ACCOUNTS_ENABLED).toBe(false);
+  });
+
+  it("reads the site address used in sign-in emails", () => {
+    expect(parseServerEnv({ ...valid, NEXT_PUBLIC_SITE_URL: "https://scout-reel-five.vercel.app" }).NEXT_PUBLIC_SITE_URL).toBe(
+      "https://scout-reel-five.vercel.app",
+    );
+    expect(() => parseServerEnv({ ...valid, NEXT_PUBLIC_SITE_URL: "scout-reel" })).toThrow(/NEXT_PUBLIC_SITE_URL/);
+  });
+
+  it("requires the site address when accounts are on", () => {
+    expect(() => parseServerEnv({ ...valid, ACCOUNTS_ENABLED: "true" })).toThrow(/NEXT_PUBLIC_SITE_URL/);
   });
 
   it("names every missing variable without printing values", () => {

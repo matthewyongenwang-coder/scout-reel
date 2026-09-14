@@ -10,13 +10,22 @@ const unset = (value: unknown) =>
 
 const required = z.preprocess(unset, z.string().min(1));
 
-export const serverEnvSchema = z.object({
-  VEX_API_KEY: required,
-  // Optional until the footage step; features that need it check for it.
-  YOUTUBE_API_KEY: z.preprocess(unset, z.string().min(1).optional()),
-  NEXT_PUBLIC_SUPABASE_URL: z.preprocess(unset, z.url()),
-  NEXT_PUBLIC_SUPABASE_ANON_KEY: required,
-});
+export const serverEnvSchema = z
+  .object({
+    VEX_API_KEY: required,
+    // Optional until the footage step; features that need it check for it.
+    YOUTUBE_API_KEY: z.preprocess(unset, z.string().min(1).optional()),
+    NEXT_PUBLIC_SUPABASE_URL: z.preprocess(unset, z.url()),
+    NEXT_PUBLIC_SUPABASE_ANON_KEY: required,
+    // Sign in stays hidden until the Supabase project is set up, then this is set to "true".
+    ACCOUNTS_ENABLED: z.preprocess((value) => value === "true", z.boolean()),
+    // The site address used in sign-in emails. Never taken from the request's Host header.
+    NEXT_PUBLIC_SITE_URL: z.preprocess(unset, z.url({ protocol: /^https?$/ }).optional()),
+  })
+  .refine((env) => !env.ACCOUNTS_ENABLED || env.NEXT_PUBLIC_SITE_URL, {
+    path: ["NEXT_PUBLIC_SITE_URL"],
+    message: "Required when ACCOUNTS_ENABLED is true",
+  });
 
 export type ServerEnv = z.infer<typeof serverEnvSchema>;
 
