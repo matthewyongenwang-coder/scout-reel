@@ -393,6 +393,14 @@ language plpgsql security invoker set search_path = '' as $$
 declare
   v_id uuid;
 begin
+  -- A generous cap per workspace, so one account cannot fill the database with cards.
+  if not exists (
+      select 1 from public.scouting_reports r
+      where r.workspace_id = p_workspace and r.team_id = p_team_id and r.season_id = p_season_id
+    )
+    and (select count(*) from public.scouting_reports r where r.workspace_id = p_workspace) >= 3000 then
+    raise exception 'This workspace has reached 3000 scouting cards' using errcode = 'P0001';
+  end if;
   insert into public.scouting_reports as r
     (workspace_id, team_id, season_id, team_number, driving, consistency, field_sense, autonomous, notes)
   values

@@ -1,12 +1,24 @@
 "use client";
 
 import Link from "next/link";
-import { useDeferredValue, useState } from "react";
+import { Suspense, use, useDeferredValue, useState } from "react";
 import { formatLocation } from "@/lib/format";
 import type { TeamSummary } from "@/lib/vex/api";
 import { inputClass } from "./ui";
 
-export function TeamList({ eventSku, teams }: { eventSku: string; teams: TeamSummary[] }) {
+export function TeamList({
+  eventSku,
+  teams,
+  scouted,
+}: {
+  eventSku: string;
+  teams: TeamSummary[];
+  /**
+   * Team ids the signed-in user's workspace has a scouting card for this season. Passed as a
+   * promise so the list and its search box render at once and the markers stream in after.
+   */
+  scouted?: Promise<number[]>;
+}) {
   const [query, setQuery] = useState("");
   const deferred = useDeferredValue(query);
   const q = deferred.trim().toLowerCase();
@@ -51,6 +63,11 @@ export function TeamList({ eventSku, teams }: { eventSku: string; teams: TeamSum
               >
                 <span className="font-semibold">{t.number}</span>
                 {t.name ? <span className="ml-2 text-muted">{t.name}</span> : null}
+                {scouted ? (
+                  <Suspense fallback={null}>
+                    <ScoutedBadge scouted={scouted} teamId={t.id} />
+                  </Suspense>
+                ) : null}
                 <span className="mt-1 block text-xs text-muted">
                   {formatLocation([t.organization, t.city, t.region]) || "Location not listed"}
                 </span>
@@ -61,4 +78,10 @@ export function TeamList({ eventSku, teams }: { eventSku: string; teams: TeamSum
       )}
     </section>
   );
+}
+
+function ScoutedBadge({ scouted, teamId }: { scouted: Promise<number[]>; teamId: number }) {
+  const ids = use(scouted);
+  if (!ids.includes(teamId)) return null;
+  return <span className="ml-2 rounded border border-accent px-1.5 text-xs font-medium text-accent">Scouted</span>;
 }

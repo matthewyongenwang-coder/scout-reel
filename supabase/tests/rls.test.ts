@@ -455,6 +455,30 @@ describe("scouting reports", () => {
     expect(await one(ctx.db, "select notes from public.scouting_reports where team_id = 8")).toEqual({ notes });
   });
 
+  it("stops new cards at 3000 per workspace but still lets existing cards be edited", async () => {
+    await admin(ctx.db);
+    await ctx.db.query(
+      `insert into public.scouting_reports (workspace_id, team_id, season_id, team_number)
+       select $1, 1000000 + n, 204, 'T' || n from generate_series(1, 3000 - (select count(*) from public.scouting_reports where workspace_id = $1)::int) n`,
+      [ctx.wsA],
+    );
+    await as(ctx.db, MEMBER_A);
+    await expect(
+      ctx.db.query("select public.save_scouting_report($1, 9999999, 204, '9Z', 5::smallint, null::smallint, null::smallint, null::smallint, 'new')", [
+        ctx.wsA,
+      ]),
+    ).rejects.toThrow(/3000 scouting cards/);
+    await ctx.db.query(
+      "select public.save_scouting_report($1, 141836, 204, '96Z', 8::smallint, null::smallint, null::smallint, null::smallint, 'still editable')",
+      [ctx.wsA],
+    );
+    expect(await one(ctx.db, "select notes from public.scouting_reports where workspace_id = $1 and team_id = 141836", [ctx.wsA])).toEqual({
+      notes: "still editable",
+    });
+    await admin(ctx.db);
+    await ctx.db.query("delete from public.scouting_reports where workspace_id = $1 and team_id > 1000000", [ctx.wsA]);
+  });
+
   it("can be deleted by the owner but not by a member", async () => {
     await as(ctx.db, MEMBER_A);
     expect(await affected(ctx.db, "delete from public.scouting_reports where workspace_id = $1", [ctx.wsA])).toBe(0);

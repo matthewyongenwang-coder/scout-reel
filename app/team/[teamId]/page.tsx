@@ -2,8 +2,10 @@ import Link from "next/link";
 import { connection } from "next/server";
 import { Suspense } from "react";
 import { Problem } from "@/components/Problem";
+import { ScoutingCardSection } from "@/components/ScoutingCardSection";
 import { type ClipsResult, type MatchClip, type ScoutEvent, TeamScout } from "@/components/TeamScout";
 import { getMatchTiming, PROGRAM_V5RC } from "@/config/seasons";
+import { accountsEnabled } from "@/lib/env";
 import { findClip } from "@/lib/footage/clip-index";
 import { getRobotStatsClipIndex } from "@/lib/footage/clips-server";
 import { formatEventDates, formatLocation } from "@/lib/format";
@@ -41,9 +43,12 @@ type Loaded =
 
 const problem = (title: string, detail: string): Loaded => ({ kind: "problem", title, detail });
 
-async function loadTeam(teamIdRaw: string, eventRaw: string | undefined): Promise<Loaded> {
+async function loadTeam(teamIdRaw: string, eventRaw: string | undefined, seasonRaw: string | undefined): Promise<Loaded> {
   const teamId = Number(teamIdRaw);
   if (!Number.isInteger(teamId) || teamId <= 0) return problem("Team not found", "That team link is not valid.");
+  // A season from a scouting card link, used only when no event is being scouted for.
+  const seasonParam = seasonRaw && /^\d{1,6}$/.test(seasonRaw) ? Number(seasonRaw) : null;
+  const requestedSeason = seasonParam && seasonParam > 0 ? seasonParam : null;
 
   let focusSku: string | null = null;
   if (eventRaw) {
@@ -58,7 +63,7 @@ async function loadTeam(teamIdRaw: string, eventRaw: string | undefined): Promis
     if (!team) return problem("Team not found", "No team with that id exists on events.vex.com.");
     if (focusSku && !focus) return problem("Event not found", `No event with SKU ${focusSku} exists on events.vex.com.`);
 
-    const seasonId = focus?.seasonId ?? (await getCurrentSeasonId(PROGRAM_V5RC, today));
+    const seasonId = focus?.seasonId ?? requestedSeason ?? (await getCurrentSeasonId(PROGRAM_V5RC, today));
     if (!seasonId) return problem("No season found", "The current VEX V5 season could not be found.");
 
     const events = await getTeamSeasonEvents(team.id, seasonId);
@@ -120,9 +125,13 @@ async function TeamContent({
   searchParams: PageProps<"/team/[teamId]">["searchParams"];
 }) {
   const { teamId } = await params;
-  const { event: eventParam } = await searchParams;
+  const { event: eventParam, season: seasonParam } = await searchParams;
   await connection();
-  const loaded = await loadTeam(teamId, typeof eventParam === "string" ? eventParam : undefined);
+  const loaded = await loadTeam(
+    teamId,
+    typeof eventParam === "string" ? eventParam : undefined,
+    typeof seasonParam === "string" ? seasonParam : undefined,
+  );
 
   if (loaded.kind === "problem") {
     return (
@@ -192,6 +201,18 @@ async function TeamContent({
         focusSku={focus?.sku ?? null}
         clipsPromise={clipsPromise}
       />
+
+      {accountsEnabled() ? (
+        // Reads the session, so it streams in on its own without holding up the season view.
+        <Suspense fallback={<p className="text-sm text-muted">Loading scouting card</p>}>
+          <ScoutingCardSection
+            teamId={team.id}
+            teamNumber={team.number}
+            seasonId={seasonId}
+            returnPath={focus ? `/team/${team.id}?event=${focus.sku}` : `/team/${team.id}?season=${seasonId}`}
+          />
+        </Suspense>
+      ) : null}
     </div>
   );
 }

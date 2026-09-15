@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { Problem } from "@/components/Problem";
 import { TeamList } from "@/components/TeamList";
+import { accountsEnabled } from "@/lib/env";
+import { getScoutedTeamIds } from "@/lib/scouting/data";
+import { getWorkspaceContext } from "@/lib/workspaces/data";
 import { formatEventDates, formatLocation } from "@/lib/format";
 import { type EventSummary, getEventBySku, getEventTeams, type TeamSummary } from "@/lib/vex/api";
 import { parseEventInput } from "@/lib/vex/parse";
@@ -79,7 +82,18 @@ async function EventContent({ params }: { params: PageProps<"/event/[sku]">["par
           View on events.vex.com
         </a>
       </div>
-      <TeamList eventSku={event.sku} teams={teams} />
+      {/* Not awaited: the team list shows at once and Scouted markers stream in once the session is read. */}
+      <TeamList eventSku={event.sku} teams={teams} scouted={accountsEnabled() ? scoutedTeamIds(event.seasonId) : undefined} />
     </div>
   );
+}
+
+/** Teams the viewer's active workspace has scouted this season. Empty when signed out or on any error. */
+async function scoutedTeamIds(seasonId: number): Promise<number[]> {
+  try {
+    const context = await getWorkspaceContext();
+    return context?.active ? await getScoutedTeamIds(context.active.workspaceId, seasonId) : [];
+  } catch {
+    return [];
+  }
 }
