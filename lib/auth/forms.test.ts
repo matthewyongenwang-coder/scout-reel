@@ -1,5 +1,28 @@
 import { describe, expect, it } from "vitest";
-import { formatInviteCode, normalizeInviteCode, parseOtpForm, parseSignInForm, safeNextPath } from "./forms";
+import { formatInviteCode, normalizeInviteCode, parseConfirmParams, parseOtpForm, parseSignInForm, safeNextPath } from "./forms";
+
+describe("parseConfirmParams", () => {
+  it.each([
+    ["pkce_0123456789abcdef0123456789abcdef", "email"],
+    ["0123456789abcdef0123456789abcdef0123456789abcdef01234567", "magiclink"],
+    ["abcdefghijklmnop", "signup"],
+  ])("accepts the link %s of type %s", (tokenHash, type) => {
+    expect(parseConfirmParams(tokenHash, type)).toEqual({ tokenHash, type });
+  });
+
+  it.each([
+    [undefined, "email"],
+    ["abc", "email"],
+    ["0123456789abcdef<script>", "email"],
+    ["0123456789abcdef", "recovery"],
+    ["0123456789abcdef", "email_change"],
+    ["0123456789abcdef", undefined],
+    [["0123456789abcdef", "x"], "email"],
+    ["a".repeat(300), "email"],
+  ])("rejects %j of type %j", (tokenHash, type) => {
+    expect(parseConfirmParams(tokenHash, type)).toBeNull();
+  });
+});
 
 const form = (entries: Record<string, string>) => {
   const data = new FormData();

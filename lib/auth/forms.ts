@@ -18,6 +18,19 @@ export function safeNextPath(value: unknown): string {
   return new URL(value, base).origin === base ? value : "/";
 }
 
+/** httpOnly cookie holding the page to return to after the email link is opened. Path only. */
+export const NEXT_PATH_COOKIE = "sr_next";
+
+const CONFIRM_TYPES = ["email", "magiclink", "signup"] as const;
+export type ConfirmType = (typeof CONFIRM_TYPES)[number];
+
+/** Checks the token hash and type from a sign-in email link before they reach Supabase. */
+export function parseConfirmParams(tokenHash: unknown, type: unknown): { tokenHash: string; type: ConfirmType } | null {
+  if (typeof tokenHash !== "string" || !/^[A-Za-z0-9_-]{16,256}$/.test(tokenHash)) return null;
+  if (typeof type !== "string" || !(CONFIRM_TYPES as readonly string[]).includes(type)) return null;
+  return { tokenHash, type: type as ConfirmType };
+}
+
 const INVITE_CODE = /^[0-9a-f]{32}$/;
 
 /** Accepts a pasted invite code with any spacing, dashes or capitals. */

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import { accountsEnabled } from "@/lib/env";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,6 +29,17 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
               Scout Reel
             </Link>
             <nav className="flex items-center gap-4 text-sm">
+              {/* A static check, so the layout never reads cookies and pages stay fast for visitors. */}
+              {accountsEnabled() ? (
+                <>
+                  <Link href="/scouting" className="text-muted hover:text-foreground">
+                    Scouting
+                  </Link>
+                  <Link href="/account" className="text-muted hover:text-foreground">
+                    Account
+                  </Link>
+                </>
+              ) : null}
               <Link href="/about" className="text-muted hover:text-foreground">
                 About
               </Link>

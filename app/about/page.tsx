@@ -78,8 +78,20 @@ export default function AboutPage() {
 
       <Section title="What is stored">
         <p>
-          Nothing about you is stored on a server. When you sync a livestream, the video link and its start time are
-          saved only in your own browser, so the sync is still there next time you open that event on the same device.
+          You do not need an account to browse events, teams, or match videos. When you sync a livestream, the video link
+          and its start time are saved only in your own browser, so the sync is still there next time you open that event
+          on the same device.
+        </p>
+        <p>
+          If you sign in to keep scouting notes with your team, Scout Reel stores your email address, the workspaces you
+          belong to, and the scouting cards your team writes, with a history of changes. There are no public profiles.
+          Teammates see you as a teammate, and a workspace owner sees only the start of your email address. Only people in
+          your workspace can see its scouting cards.
+        </p>
+        <p>
+          Accounts are for people 13 or older. You confirm this yourself when you sign in. You can leave a workspace or
+          delete your account at any time on the Account page, and a workspace owner can delete the workspace and every
+          card in it.
         </p>
       </Section>
 
