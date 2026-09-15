@@ -1,0 +1,41 @@
+# Settings for the hosted Supabase project, applied by scripts/setup-accounts.sh with
+# `npx supabase config push`. Only the settings written here are changed; everything else
+# in the project stays as it is. Secrets are never stored here: env(...) values are read
+# from your terminal when the script runs.
+project_id = "scout-reel"
+
+[api]
+# Only these schemas get API endpoints. Never add "private": it holds the membership checks.
+schemas = ["public", "graphql_public"]
+
+[auth]
+site_url = "https://scout-reel-five.vercel.app"
+additional_redirect_urls = [
+  "https://scout-reel-five.vercel.app/**",
+  "http://localhost:3009/**",
+  "http://localhost:3010/**",
+]
+
+[auth.rate_limit]
+# Sign-in emails per hour for the whole project. Needs the SMTP settings below.
+email_sent = 30
+
+# Your own email sender. Supabase's built-in email only reaches your Supabase team.
+[auth.email.smtp]
+enabled = true
+host = "env(SMTP_HOST)"
+port = 465
+user = "env(SMTP_USER)"
+pass = "env(SMTP_PASSWORD)"
+admin_email = "env(SMTP_SENDER_EMAIL)"
+sender_name = "Scout Reel"
+
+# Both emails link to the Continue page (so school email scanners cannot use the link up)
+# and include a code for signing in on another device.
+[auth.email.template.magic_link]
+subject = "Sign in to Scout Reel"
+content_path = "./supabase/templates/sign-in.html"
+
+[auth.email.template.confirmation]
+subject = "Finish signing up for Scout Reel"
+content_path = "./supabase/templates/sign-in.html"
